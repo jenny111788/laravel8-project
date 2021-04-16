@@ -8,6 +8,8 @@
         <div class="border-t border-gray-300 my-1 p-2">
             <h2 class="font-bold text-lg">{{ $article->title }}</h2>
             <p>{{ $article->created_at }} 由 {{ $article->user->name }} 分享</p>
+            <a href="{{ route('articles.edit', ['article' => $article->id]) }}">編輯</a>
         </div>
     @endforeach
+    {{ $articles->links() }}
 @endsection
